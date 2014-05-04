@@ -33,9 +33,9 @@ void FindKeiths
     )
 {
     if (GetVerbose()) cout << "FindKeiths() Begin" << endl;
-    for (ulong n = 2L; n <= pLimit; n += 2L) {
-        if (IsKeith(n))
-            ;
+	for(ulong n=0L;n<=pLimit;n++){
+        if(IsKeith(n))
+			;
     }
     if (GetVerbose()) cout << "FindKeiths() End" << endl;
 }
@@ -79,17 +79,11 @@ static bool IsKeith
     ulong pNum
     )
 {
-    if (pNum < 2L) return false;
-    if (pNum == 2L) return true;
-    for (ulong div = 3L; div <= pNum); div += 2L) {
-        if (pNum % div == 0L) return false;
-    }
-    return true;
-	/*ulong g[9],i,n,s,t=pNum;
-    for(n=s=0;t;t/=10)s+=g[n++]=t%10;
+    ulong g[9],i,n,s,t=pNum;
+    for(n=s=0L;t;t/=10L)s+=g[n++]=t%10L;
     for(i=n;s<pNum;){
-        i+=n-1;
+        i+=n-1L;
 		t=g[i%n];g[i%n]=s;s+=s-t;
     }
-    return n>1&&s==pNum;*/
+    return n>1L&&s==pNum;
 }
