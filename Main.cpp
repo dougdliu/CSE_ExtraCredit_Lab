@@ -135,7 +135,9 @@ static void Parallel
     if (amicableState->mStarted != 0) Error("Failed to start FindAmicable thread");
 
     // Start the thread to find the Keith numbers.
-    ???
+    //???
+    ThreadState *keithState = StartThread(FindKeithsThread, gGlobals.mKeithLimit);
+     if (keithState->mStarted != 0) Error("Failed to start FindKeiths thread");
 }
 
 //--------------------------------------------------------------------------------------------------------------
@@ -179,7 +181,7 @@ static void Serial
     (
     )
 {
-    FindPrimes();
-	FindAmicable();
+    	FindPrimes();
+    	FindAmicable();
 	FindKeiths();
 }
