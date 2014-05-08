@@ -32,7 +32,7 @@ ThreadState *StartThread
     ulong const          pLimit      // Upper limit of numbers to test
     )
 {
-	ThreadState *state;
+	ThreadState *state = NULL;
 	state->mLimit = pLimit;
 	pthread_t threadId;
 	state->mStarted = pthread_create(&threadId, NULL, pFunction, (void *)state);
