@@ -27,12 +27,12 @@
 // Return 'state'
 //--------------------------------------------------------------------------------------------------------------
 ThreadState *StartThread
-    (
-    ThreadFunction const pFunction,  // Pointer to the thread function
-    ulong const          pLimit      // Upper limit of numbers to test
-    )
+(
+ThreadFunction const pFunction,  // Pointer to the thread function
+ulong const          pLimit      // Upper limit of numbers to test
+)
 {
-	ThreadState *state = NULL;
+	ThreadState *state = (ThreadState*)malloc(sizeof(ThreadState));
 	state->mLimit = pLimit;
 	pthread_t threadId;
 	state->mStarted = pthread_create(&threadId, NULL, pFunction, (void *)state);
@@ -41,4 +41,4 @@ ThreadState *StartThread
 		state->mThreadId = threadId;
 	}
 	return state;
-}	
+}
