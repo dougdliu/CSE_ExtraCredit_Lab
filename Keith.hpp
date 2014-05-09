@@ -17,9 +17,10 @@ extern void *FindKeithsThread
     (
     void *pState
     );
+/* I think this was an error - static methods shouldn't be in the header
 extern bool IsKeith
     (
     ulong pNum
-    );
+    );*/
 
 #endif
