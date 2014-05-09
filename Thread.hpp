@@ -5,6 +5,7 @@
 #define THREAD_HPP
 
 #include <pthread.h>
+#include <stdlib.h>
 #include "Types.hpp"
 
 //==============================================================================================================
@@ -24,10 +25,9 @@ typedef void *(*ThreadFunction)(void *);
 //==============================================================================================================
 // Public Function Declarations
 //==============================================================================================================
-ThreadState *StartThread
-    (
-    ThreadFunction const pFunction,  // Pointer to the thread function
-    ulong const          pLimit      // Upper limit of numbers to test
-    );
+
+//ThreadFunction const pFunction --> Pointer to the thread function
+//ulong const pLimit --> Upper limit of numbers to test
+ThreadState *StartThread(ThreadFunction const pFunction, ulong const pLimit);
 
 #endif
